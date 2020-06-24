@@ -268,7 +268,7 @@ const AppModule = (function (TaskModule, UiModule, StorageModule) {
             UiModule.showAlert('Empty Field Not Allowed', 'alert alert-warning');
         } else {
             let task = TaskModule.addTask(taskTitle);
-            console.log(task);
+            // console.log(task);
             StorageModule.addTask(task);
             UiModule.clearFields();
             const totalTask = TaskModule.getTotalTaskCounter();
@@ -300,7 +300,7 @@ const AppModule = (function (TaskModule, UiModule, StorageModule) {
             let targetId = e.target.parentElement.parentElement.parentElement.parentElement.id;
             let id = Number(targetId.split('-')[1]);
             let taskToUpdate = TaskModule.getTaskById(id);
-            console.log(taskToUpdate);
+            // console.log(taskToUpdate);
             TaskModule.setCurrentTask(taskToUpdate);
             UiModule.populateForm(taskToUpdate.title);
         }
@@ -340,6 +340,8 @@ const AppModule = (function (TaskModule, UiModule, StorageModule) {
         init() {
             const totalTask = TaskModule.getTotalTaskCounter();
             UiModule.showTotalTaskCount(totalTask);
+            const completedTaskCount = TaskModule.getCompletedTaskCounter();
+            UiModule.showCompletedTaskCounter(completedTaskCount);
             let tasks = TaskModule.getTasks();
             UiModule.populateTasks(tasks);
             // UiModule.showEditState();
