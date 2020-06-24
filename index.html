@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">   
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <title>Task Manager</title>
+    <style>
+        .completed-task{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Task Manager App</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Type Your Task..." id="task-title">
+            </div>
+            <button type="submit" class="btn btn-success add-task">Add Task</button>
+            <button type="submit" class="btn btn-warning update-task">Update Task</button>
+            <button type="submit" class="btn btn-danger delete-task">Delete Task</button>
+            <button type="submit" class="btn btn-info back-btn">Back</button>
+        </div>
+    </div>
+    <h5 class="text-center mt-3">Completed <span class="completed-tasks">0</span> task out of <span class="total-tasks">0</span></h5>
+    <div class="card card-body" id="task-container">
+        
+    </div>
+</div>    
+<script src="main.js"></script>
+</body>
+</html>
